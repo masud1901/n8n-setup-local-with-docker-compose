@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    ports:
+      - "5678:5678" # Host:Container port mapping
+    volumes:  # COMBINED volumes section - CORRECTED!
+      - n8n_data:/home/node/.n8n  # Named volume for data persistence
+      - ./config:/config       # Bind mount for custom config directory (optional)
+    restart: unless-stopped
+    environment:
+      # Example environment variables (adjust as needed for n8n)
+      # N8N_HOST: localhost  # Example - you might configure these in .env
+      # N8N_PORT: 5678      # Example - you might configure these in .env
+      # N8N_BASIC_AUTH_USER:  # Example - if you use basic auth
+      # N8N_BASIC_AUTH_PASSWORD: # Example - if you use basic auth
+      # WEBHOOK_URL: http://localhost:5678/ # Example - if you need to set webhook URL
+      # ... other n8n environment variables ...
+      N8N_CONFIG_FILES: /config/n8n-config.json  # Example for custom config file
+
+volumes:
+  n8n_data:
+    # Named volume is defined here. Docker will manage its storage location.

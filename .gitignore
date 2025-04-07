@@ -1,0 +1,21 @@
+# Docker related files/directories
+docker-compose.override.yml
+.dockerignore
+Dockerfile
+.docker/
+
+# Environment files (important for security!)
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files (if any are generated in the repo root)
+*.log
+
+# Node.js specific (if relevant - might not be for this n8n setup, but good practice)
+node_modules/
+package-lock.json
+npm-debug.log
+yarn-error.log
