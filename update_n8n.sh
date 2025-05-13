@@ -27,11 +27,11 @@ cd "$SCRIPT_DIR"
 
 # 3. Stop and remove the existing services (using docker compose down)
 echo "Stopping and removing existing services using 'docker compose down'..."
-docker compose down
+docker-compose down
 
 # 4. Pull the latest n8n image (using docker compose pull)
 echo "Pulling latest n8n image using 'docker compose pull'..."
-docker compose pull "$SERVICE_NAME"
+docker-compose pull "$SERVICE_NAME"
 
 # 5. Get and display the latest n8n version (optional)
 echo "Getting latest n8n version..."
@@ -40,7 +40,7 @@ echo "Latest n8n version: $LATEST_VERSION"
 
 # 6. Start the services using docker compose up (in detached mode -d)
 echo "Starting services using 'docker compose up -d'..."
-docker compose up -d
+docker-compose up -d
 
 echo "--- n8n Update Complete! (using Docker Compose) ---"
 echo "You can access n8n at http://localhost:5678 (replace with your host if not localhost)"
