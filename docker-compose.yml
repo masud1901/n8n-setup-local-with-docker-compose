@@ -17,11 +17,13 @@ services:
       # N8N_BASIC_AUTH_PASSWORD: # Example - if you use basic auth
       # WEBHOOK_URL: http://localhost:5678/ # Example - if you need to set webhook URL
       # ... other n8n environment variables ...
+      GENERIC_TIMEZONE: 'Europe/Stockholm' # Or your preferred timezone
+      N8N_CONFIG_FILES: /config/n8n-config.json # From your GitHub version
       N8N_SECURE_COOKIE: 'false'
       N8N_BASIC_AUTH_ACTIVE: 'true'
       N8N_BASIC_AUTH_USER: 'your_chosen_username'  # CHOOSE A USERNAME
       N8N_BASIC_AUTH_PASSWORD: 'your_strong_password' # CHOOSE A STRONG PASSWORD
-      N8N_CONFIG_FILES: /config/n8n-config.json  # Example for custom config file
+      WEBHOOK_URL: 'https://n8n.nimbusrb.com/'
 
 volumes:
   n8n_data:
