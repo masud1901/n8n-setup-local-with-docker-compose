@@ -4,11 +4,11 @@ services:
     image: n8nio/n8n:latest
     container_name: n8n
     ports:
-      - "5678:5678" # Host:Container port mapping
+      - "8080:5678" # Host:Container port mapping
     volumes:  # COMBINED volumes section - CORRECTED!
       - n8n_data:/home/node/.n8n  # Named volume for data persistence
       - ./config:/config       # Bind mount for custom config directory (optional)
-    restart: unless-stopped
+    restart: always
     environment:
       # Example environment variables (adjust as needed for n8n)
       # N8N_HOST: localhost  # Example - you might configure these in .env
